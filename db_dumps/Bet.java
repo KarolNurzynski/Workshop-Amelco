@@ -16,11 +16,13 @@ public class Bet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
+
     private BigDecimal stake = BigDecimal.valueOf(0);
 
-    // No necessary...
-//    private BigDecimal maxUserWin;
-//    private BigDecimal maxUserLose;
+    private BigDecimal maxUserWin;
+
+    private BigDecimal maxUserLose;
 
     private BigDecimal probabilityUserWins;
 
@@ -29,7 +31,7 @@ public class Bet {
 
     private LocalDateTime created;  //not active = null / published or canceled = datetime
 
-    private LocalDateTime finished;  //not cancelled = null / finished = datetime
+    private LocalDateTime cancelled;  //not cancelled = null / finished = datetime
 
     @ManyToOne
     @JoinColumn(name = "betOffer_id")
