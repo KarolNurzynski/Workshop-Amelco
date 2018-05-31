@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name="bet")
@@ -25,6 +26,12 @@ public class Bet {
 
     private BigDecimal probabilityUserWins;
 
+    private Integer betStatus;  //-1: not active(cancelled) / 0: finished / 1: active
+
+    private LocalDateTime published;  //not active = null / published or canceled = datetime
+
+    private LocalDateTime finished;  //cancelled or not active = null / finished = datetime
+
     @ManyToOne
     @JoinColumn(name = "betOffer_id")
     private BetOffer betOffer;
@@ -32,5 +39,11 @@ public class Bet {
     @ManyToOne
     @JoinColumn(name = "event_id")
     private Event event;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+
 
 }

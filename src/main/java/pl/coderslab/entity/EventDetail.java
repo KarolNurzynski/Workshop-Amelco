@@ -4,7 +4,6 @@ package pl.coderslab.entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -33,7 +32,7 @@ public class EventDetail {
     private List<Event> events;
 
     @ManyToMany
-    private List<BetType> betTypes;
+    private List<BetOfferType> betOfferTypes;
 
 
 

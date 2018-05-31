@@ -9,9 +9,9 @@ import java.time.LocalTime;
 import java.util.List;
 
 @Entity
-@Table(name="betType")
+@Table(name="betOfferType")
 @Data
-public class BetType {
+public class BetOfferType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,7 +42,7 @@ public class BetType {
     @ManyToMany(mappedBy = "events")
     private List<EventDetail> eventDetails;
 
-    @OneToMany(mappedBy = "betType")
+    @OneToMany(mappedBy = "betOfferType")
     private List<BetOffer> betOffers;
 
 

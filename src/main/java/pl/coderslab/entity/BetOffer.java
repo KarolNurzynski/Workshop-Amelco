@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -20,9 +21,15 @@ public class BetOffer {
 
     private BigDecimal odds;
 
+    private Integer betOfferStatus;  //-1: not active / 0: finished / 1: active
+
+    private LocalDateTime published;    //not active = null / published = datetime
+
+    private LocalDateTime finished;
+
     @ManyToOne
-    @JoinColumn(name = "betType_id")
-    private BetType betType;
+    @JoinColumn(name = "betOfferType_id")
+    private BetOfferType betOfferType;
 
     @OneToMany(mappedBy = "betOffer")
     private List<Bet> bets;
