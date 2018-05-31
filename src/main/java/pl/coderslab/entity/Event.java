@@ -20,7 +20,7 @@ public class Event {
 
     private String name;
 
-    private LocalDateTime startDateTime;
+    private LocalDateTime localDateTime;
 
     @ManyToOne
     @JoinColumn(name = "sport_id")
