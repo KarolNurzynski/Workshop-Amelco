@@ -37,5 +37,11 @@ public class Event {
     @ManyToMany(mappedBy = "events")
     private List<Team> teams;
 
+    @ManyToMany
+    private List<EventDetail> eventDetails;
+
+    @OneToMany(mappedBy = "event")
+    private List<Bet> bets;
+
 
 }
