@@ -6,18 +6,39 @@ import pl.coderslab.entity.Event;
 import pl.coderslab.repository.EventRepository;
 import org.json.JSONException;
 import org.json.JSONObject;
+import pl.coderslab.serviceInterface.EventServiceInterface;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class EventService {
+public class EventService implements EventServiceInterface {
+
+    EventRepository eventRepository;
 
     @Autowired
-    EventRepository eventRepository;
+    EventService(EventRepository eventRepository) {
+        this.eventRepository=eventRepository;
+    }
 
     public List<Event> findAllEvents() {
         return eventRepository.findAll();
+    }
+
+    public Event findEventById(Long id) {
+        return eventRepository.findById(id).orElseGet(null);
+    }
+
+    public Event saveEvent(Event event) {
+        return eventRepository.save(event);
+    }
+
+    public Event editEvent(Event event) {
+        return eventRepository.save(event);
+    }
+
+    public void deleteEvent(Event event) {
+        eventRepository.delete(event);
     }
 
 }

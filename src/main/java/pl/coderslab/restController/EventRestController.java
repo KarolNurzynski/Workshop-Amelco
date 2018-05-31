@@ -1,4 +1,4 @@
-package pl.coderslab.controller;
+package pl.coderslab.restController;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +11,8 @@ import pl.coderslab.service.EventService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/events")
-public class EventController {
+@RequestMapping("/api/events")
+public class EventRestController {
 
     @Autowired
     EventService eventService;
@@ -21,6 +21,5 @@ public class EventController {
     public List<Event> listOfEvents() {
         return eventService.findAllEvents();
     }
-
 
 }
