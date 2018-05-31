@@ -19,31 +19,18 @@ public class BetOfferType {
 
     private String name;
 
-    private boolean team1Wins;
-
-    private boolean team2Wins;
-
-    private boolean team3Wins;
-
-    private boolean draw;
-
-    private Integer team1Score;
-
-    private Integer team2Score;
-
-    private Integer team3Score;
-
-    private LocalTime team1TimeLessThan;
-
-    private LocalTime team2TimeLessThan;
-
-    private LocalTime team3TimeLessThan;
-
-    @ManyToMany(mappedBy = "events")
-    private List<EventDetail> eventDetails;
+    //it is not the same as sport - we can have various sets of bet types for different leagues e.g. fotball-standard; football-championsleague
+    @ManyToOne
+    @JoinColumn(name = "eventGroup_id")
+    private EventGroup eventGroup;
 
     @OneToMany(mappedBy = "betOfferType")
     private List<BetOffer> betOffers;
+
+//    @ManyToMany(mappedBy = "events")
+//    private List<EventDetail> eventDetails;
+//
+
 
 
 }

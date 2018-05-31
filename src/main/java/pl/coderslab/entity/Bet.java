@@ -18,7 +18,7 @@ public class Bet {
 
     private String name;
 
-    private BigDecimal stake;
+    private BigDecimal stake = BigDecimal.valueOf(0);
 
     private BigDecimal maxUserWin;
 
@@ -26,11 +26,12 @@ public class Bet {
 
     private BigDecimal probabilityUserWins;
 
-    private Integer betStatus;  //-1: not active(cancelled) / 0: finished / 1: active
+    //This field can be calculated from published and cancelled + event finished field
+//    private Integer betStatus = -1;  //-1: not active(cancelled) / 0: finished / 1: active
 
-    private LocalDateTime published;  //not active = null / published or canceled = datetime
+    private LocalDateTime created;  //not active = null / published or canceled = datetime
 
-    private LocalDateTime finished;  //cancelled or not active = null / finished = datetime
+    private LocalDateTime cancelled;  //not cancelled = null / finished = datetime
 
     @ManyToOne
     @JoinColumn(name = "betOffer_id")
@@ -43,7 +44,6 @@ public class Bet {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-
 
 
 }

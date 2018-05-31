@@ -19,12 +19,12 @@ public class User {
 
     private String username;
 
-    @ManyToOne
-    @JoinColumn(name = "event_id")
-    private Event event;
-
+    //To moze byc potrzebne do subskrypcji, ale na razie olewam
+//    @ManyToOne
+//    @JoinColumn(name = "event_id")
+//    private Event event;
+//
     @OneToMany(mappedBy = "user")
     private List<Bet> bets;
-
 
 }

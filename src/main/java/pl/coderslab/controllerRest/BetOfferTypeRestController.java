@@ -1,4 +1,4 @@
-package pl.coderslab.restController;
+package pl.coderslab.controllerRest;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

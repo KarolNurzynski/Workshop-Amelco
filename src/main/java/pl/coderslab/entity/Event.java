@@ -20,7 +20,7 @@ public class Event {
 
     private String name;
 
-    private LocalDateTime localDateTime;
+    private LocalDateTime startDateTime;
 
     @ManyToOne
     @JoinColumn(name = "sport_id")
@@ -37,11 +37,20 @@ public class Event {
     @ManyToMany(mappedBy = "events")
     private List<Team> teams;
 
-    @ManyToMany
-    private List<EventDetail> eventDetails;
+    @ManyToOne
+    @JoinColumn(name = "eventGroup_id")
+    private EventGroup eventGroup;
+
+    @OneToMany(mappedBy = "event")
+    private List<BetOffer> betOffers;
 
     @OneToMany(mappedBy = "event")
     private List<Bet> bets;
+
+
+//    @ManyToMany
+//    private List<EventDetail> eventDetails;
+
 
 
 }
