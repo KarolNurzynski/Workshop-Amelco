@@ -16,6 +16,6 @@ public interface LeagueServiceInterface {
 
     public League editLeague(League league);
 
-    public void deleteLeague(League league);
+    public void deleteLeague(Long id);
 
 }

@@ -16,6 +16,6 @@ public interface EventDetailServiceInterface {
 
     public EventDetail editEventDetail(EventDetail eventDetail);
 
-    public void deleteEventDetail(EventDetail eventDetail);
+    public void deleteEventDetail(Long id);
 
 }

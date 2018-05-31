@@ -34,8 +34,8 @@ public class RegionService implements RegionServiceInterface {
         return regionRepository.save(region);
     }
 
-    public void deleteRegion(Region region) {
-        regionRepository.delete(region);
+    public void deleteRegion(Long id) {
+        regionRepository.deleteById(id);
     }
 
 }

@@ -18,6 +18,6 @@ public interface EventServiceInterface {
 
     public Event editEvent(Event event);
 
-    public void deleteEvent(Event event);
+    public void deleteEvent(Long id);
 
 }

@@ -34,8 +34,8 @@ public class BetService implements BetServiceInterface {
         return betRepository.save(bet);
     }
 
-    public void deleteBet(Bet bet) {
-        betRepository.delete(bet);
+    public void deleteBet(Long id) {
+        betRepository.deleteById(id);
     }
 
 }

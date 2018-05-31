@@ -34,8 +34,8 @@ public class TeamService implements TeamServiceInterface {
         return teamRepository.save(team);
     }
 
-    public void deleteTeam(Team team) {
-        teamRepository.delete(team);
+    public void deleteTeam(Long id) {
+        teamRepository.deleteById(id);
     }
 
 }

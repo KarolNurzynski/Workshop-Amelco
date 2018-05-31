@@ -16,6 +16,6 @@ public interface BetOfferTypeServiceInterface {
 
     public BetOfferType editBetOfferType(BetOfferType betOfferType);
 
-    public void deleteBetOfferType(BetOfferType betOfferType);
+    public void deleteBetOfferType(Long id);
 
 }

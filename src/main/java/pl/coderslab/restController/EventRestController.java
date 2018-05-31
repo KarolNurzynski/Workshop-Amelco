@@ -2,12 +2,9 @@ package pl.coderslab.restController;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.coderslab.entity.Event;
 import pl.coderslab.service.EventService;
-
 import java.util.List;
 
 @RestController
@@ -21,5 +18,28 @@ public class EventRestController {
     public List<Event> listOfEvents() {
         return eventService.findAllEvents();
     }
+
+    @GetMapping("/{id}")
+    public Event getEventById(@PathVariable Long id) {
+        return eventService.findEventById(id);
+    }
+    
+    @PostMapping("/")
+    public void addEvent(@RequestBody Event event)
+    {
+        eventService.saveEvent(event);
+    }
+
+    @PutMapping("/{id}")
+    public void editEvent(@RequestBody Event event) {
+        eventService.editEvent(event);
+    }
+
+
+    @DeleteMapping("/{id}")
+    public void deleteEvent(@PathVariable Long id) {
+        eventService.deleteEvent(id);
+    }
+
 
 }

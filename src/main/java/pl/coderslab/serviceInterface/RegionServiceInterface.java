@@ -16,6 +16,6 @@ public interface RegionServiceInterface {
 
     public Region editRegion(Region region);
 
-    public void deleteRegion(Region region);
+    public void deleteRegion(Long id);
 
 }

@@ -16,6 +16,6 @@ public interface TeamServiceInterface {
 
     public Team editTeam(Team team);
 
-    public void deleteTeam(Team team);
+    public void deleteTeam(Long id);
 
 }

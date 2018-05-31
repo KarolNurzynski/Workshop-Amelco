@@ -16,6 +16,6 @@ public interface BetServiceInterface {
 
     public Bet editBet(Bet bet);
 
-    public void deleteBet(Bet bet);
+    public void deleteBet(Long id);
 
 }

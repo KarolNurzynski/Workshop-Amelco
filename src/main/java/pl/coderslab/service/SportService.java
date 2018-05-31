@@ -34,8 +34,8 @@ public class SportService implements SportServiceInterface {
         return sportRepository.save(sport);
     }
 
-    public void deleteSport(Sport sport) {
-        sportRepository.delete(sport);
+    public void deleteSport(Long id) {
+        sportRepository.deleteById(id);
     }
 
 }

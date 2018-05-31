@@ -16,6 +16,6 @@ public interface SportServiceInterface {
 
     public Sport editSport(Sport sport);
 
-    public void deleteSport(Sport sport);
+    public void deleteSport(Long id);
 
 }

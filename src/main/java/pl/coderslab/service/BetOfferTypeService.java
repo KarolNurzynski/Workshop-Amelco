@@ -34,8 +34,8 @@ public class BetOfferTypeService implements BetOfferTypeServiceInterface {
         return betOfferTypeRepository.save(betOfferType);
     }
 
-    public void deleteBetOfferType(BetOfferType betOfferType) {
-        betOfferTypeRepository.delete(betOfferType);
+    public void deleteBetOfferType(Long id) {
+        betOfferTypeRepository.deleteById(id);
     }
 
 }

@@ -34,8 +34,8 @@ public class LeagueService implements LeagueServiceInterface {
         return leagueRepository.save(league);
     }
 
-    public void deleteLeague(League league) {
-        leagueRepository.delete(league);
+    public void deleteLeague(Long id) {
+        leagueRepository.deleteById(id);
     }
 
 }

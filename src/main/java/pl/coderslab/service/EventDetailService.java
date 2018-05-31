@@ -34,8 +34,8 @@ public class EventDetailService implements EventDetailServiceInterface {
         return eventDetailRepository.save(eventDetail);
     }
 
-    public void deleteEventDetail(EventDetail eventDetail) {
-        eventDetailRepository.delete(eventDetail);
+    public void deleteEventDetail(Long id) {
+        eventDetailRepository.deleteById(id);
     }
 
 }
